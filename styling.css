@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+:root{
+    /* COLOURS */
+    --cyan-d: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    /* NEUTRAL */
+    --blue-vd: hsl(212, 21%, 14%);
+    --gray-blue-d: hsl(228, 12%, 48%);
+/* --white: hsl(0, 0%, 100%) */
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: var(--cream);
+    display: grid;
+    place-content: center;
+}
+
+.prev-cont{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: fit-content;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.prod-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.prod-cont{
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    /* overflow-y: scroll; */
+}
+
+.category{
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color:  var(--gray-blue-d);
+    margin-bottom: 16px;
+    letter-spacing: 4px;
+}
+
+.product-name{
+    font-size: 32px;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 16px;
+}
+
+.desc{
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color:  var(--gray-blue-d);
+    line-height: 24px;
+}
+
+.price-cont{
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.price-discount{
+    font-size: 32px;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    line-height: 32px;
+    color: var(--cyan-d);
+    margin-right: 16px;
+}
+
+.price-og{
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-decoration: line-through;
+    color: var(--cyan-d);
+    height: 14px;
+}
+
+button{
+    background-color: var(--cyan-d);
+    color: white;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+
+    width: 100%;
+
+    border-radius: 8px;
+    height: 48px;
+
+    transition: box-shadow 0.3s;
+}
+
+button:hover{
+    box-shadow: 0 -48px 0 0 var(--blue-vd) inset;
+}
+
+button label{
+    height: 14px;
+}
+
+button img{
+    height: 16px;
+    transform: translateY(2px);
+    margin-right: 8px;
+}
+
+@media only screen and (min-width: 612px) {
+    .prev-cont{
+        width: 480px;
+    }
+  }
+
+@media only screen and (min-width: 1024px) {
+  .prod-img{
+    display: flex;
+    /* overflow: hidden; */
+  }
+
+  .prod-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .prev-cont{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      width: 720px;
+      overflow: hidden;
+      height: 75vh;
+  }
+
+  .prod-cont{
+    justify-content: space-between;
+    padding: 40px;
+  }
+}
